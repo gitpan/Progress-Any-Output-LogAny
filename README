@@ -1,0 +1,35 @@
+NAME
+    Progress::Any::Output::LogAny - Output progress to Log::Any
+
+VERSION
+    version 0.01
+
+SYNOPSIS
+     use Progress::Any '$progress';
+     use Progress::Any::Output::LogAny;
+
+     Progress::Any->set_output(
+         output => Progress::Any::Output::LogAny->new(
+             # options
+         ),
+     );
+
+     $progress->init(target=>4);
+     $progress->update(message=>"Test") for 1..4;
+
+    Will output in log:
+
+     (1/4) Test
+     (2/4) Test
+     (3/4) Test
+     (4/4) Test
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
