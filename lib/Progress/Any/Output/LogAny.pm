@@ -6,7 +6,9 @@ use warnings;
 
 use Log::Any '$log';
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
+
+# TODO: allow customizing format, show task
 
 sub new {
     my ($class, %args) = @_;
@@ -16,6 +18,9 @@ sub new {
 sub update {
     my ($self, %args) = @_;
 
+    my $msg = $args{message};
+    return unless defined($msg);
+
     my $meth = "debugf";
     my $level = $args{level} // "normal";
     if ($level eq 'low') {
@@ -24,8 +29,7 @@ sub update {
         $meth = "infof";
     }
 
-    $log->$meth("(%s/%s) %s", $args{pos}, $args{target}//"?",
-                $args{message} // "Progress");
+    $log->$meth("(%s/%s) %s", $args{pos}, $args{target}//"?", $msg);
 }
 
 1;
@@ -41,7 +45,7 @@ Progress::Any::Output::LogAny - Output progress to Log::Any
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
