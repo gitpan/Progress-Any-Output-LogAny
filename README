@@ -2,33 +2,56 @@ NAME
     Progress::Any::Output::LogAny - Output progress to Log::Any
 
 VERSION
-    version 0.02
+    version 0.03
 
 SYNOPSIS
-     use Progress::Any '$progress';
-     use Progress::Any::Output::LogAny;
+     use Progress::Any::Output;
 
-     Progress::Any->set_output(
-         output => Progress::Any::Output::LogAny->new(
-             # options
-         ),
+     Progress::Any::Output->set_output("LogAny",
+         logger   => $log,
+         template => '(%c/%C) %m',
      );
 
-     $progress->init(target=>4);
-     $progress->update(message=>"Test") for 1..4;
+DESCRIPTION
+    This output sends progress update to Log::Any. Only progress update()
+    containing message will be logged, unless "has_message_only" attribute
+    is set to false. Logging is done at loglevel "debug", but when update
+    "level" is set to "high", message will be logged at loglevel "info".
+    When update "level" is set to "low", message will be logged at loglevel
+    "trace".
 
-    Will output in log:
+METHODS
+  new(%args) => OBJ
+    Instantiate. Usually called through
+    "Progress::Any::Output->set("LogAny", %args)".
 
-     (1/4) Test
-     (2/4) Test
-     (3/4) Test
-     (4/4) Test
+    Known arguments:
+
+    *   logger => OBJ
+
+        Logger object to use. Defaults to "Log::Any->get_logger()".
+
+    *   template => STR (default: '(%c/%C) %m')
+
+        Will be used to do "$progress->fill_template()". See Progress::Any
+        for supported template strings.
+
+    *   has_message_only => BOOL (default: 1)
+
+        By default, when set to 1, will cause output to only log progress
+        update()'s which contains message. If set to 0, will log all
+        progress update()'s.
+
+SEE ALSO
+    Progress::Any
+
+    Log::Any
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Steven Haryanto.
+    This software is copyright (c) 2013 by Steven Haryanto.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

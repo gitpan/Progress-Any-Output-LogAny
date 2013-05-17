@@ -17,14 +17,14 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Progress-Any-Output-LogAny",
-  "dist_version" => "0.02",
+  "dist_version" => "0.03",
   "license" => "perl",
   "module_name" => "Progress::Any::Output::LogAny",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Log::Any" => 0,
-    "Progress::Any" => "0.01",
+    "Progress::Any" => "0.05",
     "perl" => "5.010"
   },
   "script_files" => []
