@@ -2,12 +2,14 @@ NAME
     Progress::Any::Output::LogAny - Output progress to Log::Any
 
 VERSION
-    version 0.03
+    This document describes version 0.04 of Progress::Any::Output::LogAny
+    (from Perl distribution Progress-Any-Output-LogAny), released on
+    2014-07-29.
 
 SYNOPSIS
      use Progress::Any::Output;
 
-     Progress::Any::Output->set_output("LogAny",
+     Progress::Any::Output->set("LogAny",
          logger   => $log,
          template => '(%c/%C) %m',
      );
@@ -47,11 +49,27 @@ SEE ALSO
 
     Log::Any
 
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/Progress-Any-Output-LogAny>.
+
+SOURCE
+    Source repository is at
+    <https://github.com/sharyanto/perl-Progress-Any-Output-LogAny>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=Progress-Any-Output-L
+    ogAny>
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2013 by Steven Haryanto.
+    This software is copyright (c) 2014 by Steven Haryanto.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

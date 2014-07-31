@@ -6,7 +6,7 @@ use warnings;
 
 use Log::Any;
 
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 sub new {
     my ($class, %args) = @_;
@@ -37,9 +37,11 @@ sub update {
 1;
 # ABSTRACT: Output progress to Log::Any
 
-
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -47,13 +49,13 @@ Progress::Any::Output::LogAny - Output progress to Log::Any
 
 =head1 VERSION
 
-version 0.03
+This document describes version 0.04 of Progress::Any::Output::LogAny (from Perl distribution Progress-Any-Output-LogAny), released on 2014-07-29.
 
 =head1 SYNOPSIS
 
  use Progress::Any::Output;
 
- Progress::Any::Output->set_output("LogAny",
+ Progress::Any::Output->set("LogAny",
      logger   => $log,
      template => '(%c/%C) %m',
  );
@@ -101,16 +103,31 @@ L<Progress::Any>
 
 L<Log::Any>
 
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/Progress-Any-Output-LogAny>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/sharyanto/perl-Progress-Any-Output-LogAny>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=Progress-Any-Output-LogAny>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
 =head1 AUTHOR
 
 Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Steven Haryanto.
+This software is copyright (c) 2014 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
